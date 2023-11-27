@@ -1,0 +1,4 @@
+requests
+keyboard
+Pillow
+tkinter

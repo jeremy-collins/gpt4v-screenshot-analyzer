@@ -1,0 +1,12 @@
+[Unit]
+Description=GPT-4_Vision_Screenshot_Analyzer
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/bin/python3 /nethome/jcollins90/gpt/gpt4_screenshot_analyzer.py
+Restart=always
+Environment="DISPLAY=:1"
+
+[Install]
+WantedBy=multi-user.target
