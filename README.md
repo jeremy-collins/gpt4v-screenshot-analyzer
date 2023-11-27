@@ -58,4 +58,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) 
 
 ## Credits
 
-Developed by [Jeremy A. Collins](jeremy-collins.github.io). Special thanks to OpenAI for providing the GPT-4 Vision API.
+Developed by [Jeremy A. Collins](https://jeremy-collins.github.io/). Special thanks to OpenAI for providing the GPT-4 Vision API.
