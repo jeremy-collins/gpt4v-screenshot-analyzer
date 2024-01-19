@@ -7,10 +7,11 @@ import threading
 import keyboard
 import time
 import tkinter as tk
+import os
 from PIL import Image, ImageTk
 
-# OpenAI API Key
-api_key = "your-api-key-here"
+# OpenAI API Key (be sure to set this environment variable before running the script)
+api_key = os.getenv("OPENAI_API_KEY")
 
 # Function to encode the image
 def encode_image(image_path):
@@ -158,6 +159,7 @@ def take_screenshot():
     time.sleep(1)
     base64_image = encode_image(screenshot_path)
     description = get_image_description(base64_image)
+    print('description: ', description)
     display_result(screenshot_path, description['choices'][0]['message']['content'])
 
 # Hotkey function

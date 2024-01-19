@@ -4,9 +4,9 @@ After=network.target
 
 [Service]
 User=root
-ExecStart=/usr/bin/python3 /nethome/jcollins90/gpt/gpt4_screenshot_analyzer.py
+ExecStart=/usr/bin/python3 /home/your_username/gpt4v-screenshot-analyzer/gpt4_screenshot_analyzer.py
 Restart=always
-Environment="DISPLAY=:1"
+Environment="DISPLAY=:0"
 
 [Install]
 WantedBy=multi-user.target

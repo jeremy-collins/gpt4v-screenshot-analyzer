@@ -11,7 +11,7 @@ The GPT-4V Screenshot Analyzer is a tool that integrates the capabilities of Ope
 - **Interactive Dialogue**: Engage in a chat with the AI about the screenshot for detailed insights and follow-up questions.
 - **User-Friendly Interface**: Simple GUI for viewing screenshots and interacting with the AI.
 
-## Installation
+## Installation (Tested on Ubuntu 20.04)
 
 1. **Clone the Repository**
    ```
@@ -27,16 +27,39 @@ The GPT-4V Screenshot Analyzer is a tool that integrates the capabilities of Ope
 
 3. **Set Up OpenAI API Key**
    - Obtain an API key from OpenAI.
-   - Replace `your-api-key-here` in `gpt4_screenshot_analyzer.py` with your actual API key.
+   - Set your OpenAI API key as an environment variable:
+   ```
+   echo 'export OPENAI_API_KEY=<put your key here>' >> ~/.bashrc
+   ```
+   - Alternatively, you can set the api_key variable inside gpt4v_screenshot_analyzer.py to your OpenAI key, but this is a security risk.
 
 4. **Systemd Service Setup (Optional)**
+   - First, make the gpt4_screenshot_analyzer.py file executable:
+      ```
+     sudo chmod +x gpt4_screenshot_analyzer.py
+     ```
+   - Then, customize the gpt4-screenshot.service file to your needs.
+      - You will need to change the path to the gpt4_screenshot_analyzer.py file inside the ExecStart line.
+      - You may also need to change the display number in the Environment line.
+      - Lastly, you may want to change the User line.
    - To run the application as a service to be started on boot, follow these steps:
      ```
      sudo cp gpt4-screenshot.service /etc/systemd/system/
      sudo systemctl enable gpt4-screenshot
      sudo systemctl start gpt4-screenshot
      ```
-
+   - If this doesn't work, you can debug the service by running:
+     ```
+     sudo systemctl status gpt4-screenshot
+     ```
+   - These commands may also be useful:
+     ```
+     sudo systemctl daemon-reload
+     sudo systemctl stop gpt4-screenshot
+     sudo systemctl restart gpt4-screenshot
+     sudo systemctl disable gpt4-screenshot
+     ```
+     
 ## Usage
 
 - Start the application:
