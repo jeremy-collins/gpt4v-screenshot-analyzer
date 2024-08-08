@@ -66,7 +66,7 @@ The GPT-4V Screenshot Analyzer is a tool that integrates the capabilities of Ope
      ```
 ## Usage
 
-- Start the application:
+- Start the application (you can skip this step if you followed steps 4 and 5):
   ```
   python3 gpt4_screenshot_analyzer.py
   ```
