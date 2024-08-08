@@ -59,7 +59,11 @@ The GPT-4V Screenshot Analyzer is a tool that integrates the capabilities of Ope
      sudo systemctl restart gpt4-screenshot
      sudo systemctl disable gpt4-screenshot
      ```
-     
+5. **Enabling Display Access on Startup (optional)**
+   - To enable display access on startup, open Startup Applications (Ubuntu) and add a Startup Program with the following command:
+     ```
+     path/to/repo/gpt4v-screenshot-analyzer/enable_xhost.sh
+     ```
 ## Usage
 
 - Start the application:
